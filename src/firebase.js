@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4LmonPFC7CfjD3Y3xZbVsUWr-WEKrN0c",
@@ -8,10 +8,11 @@ const firebaseConfig = {
   projectId: "ryedzoffc-2d40f",
   storageBucket: "ryedzoffc-2d40f.firebasestorage.app",
   messagingSenderId: "1053013297416",
-  appId: "1:1053013297416:web:07741babea215a8bb5c4bd"
+  appId: "1:1053013297416:web:07741babea215a8bb5c4bd",
+  databaseURL: "https://ryedzoffc-2d40f-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = getDatabase(app);
 export const googleProvider = new GoogleAuthProvider();
